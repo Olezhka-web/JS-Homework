@@ -382,12 +382,97 @@
 // Выведите слово YES, если число N является точной степенью двойки,
 // или слово NO в противном случае.
 // Операцией возведения в степень пользоваться нельзя!
+// let N = +prompt();
+// function myFunction(N) {
+//     if(N <= 0 || Number.isInteger(N) === false){
+//         return false;}
+//         while(N != 1){
+//             if(N % 2 != 0){
+//                 return 'No';
+//             }
+//             N = N / 2;
+//         }
+//         return 'Yes';
+// };
+// let result = myFunction(N);
+// console.log(result);
+
+//Або
+// let N = +prompt();
+// function myFunction(N) {
+//     while(N > 1 && N %2 == 0){
+//         N/=2;
+//     }
+//     if(N == 1){
+//         return 'Yes';
+//     } else{
+//         return 'No';
+//     }
+// };
+// let result = myFunction(N);
+// console.log(result);
+
 //
 // 2) Deep Copy
 // реалізувати глибоке копіювання обєкту за допомогою рекурсій
+// let cars = {name: 'Mercedes', age: 1, color: {
+//     superColor: 'Black', superColor2: 'White'
+//     }};
+// function myFunction (cars){
+//     let newCars = {};
+//     for (const carsKey in cars) {
+//         if(typeof cars[carsKey] === "object"){
+//             newCars[carsKey] = myFunction(cars[carsKey]);
+//         } else{
+//             newCars[carsKey]=cars[carsKey];
+//         }
+//     }
+//     return newCars;
+// }
+// let result = myFunction(cars);
+// result.color.superColor = 'red';
+// console.log(cars);
+// console.log(result);
+
 //
+
+
 // 3) Flat
 // Вирівняти багаторівневий масив в однорівневий
 // [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
+// let array = [1,3, ['Hello', 'Wordd', [9,6,1]], ['oops'], 9];
+// let newArray = [];
+// for (const arrayElement of array) {
+//     if(Array.isArray(arrayElement)){
+//         for (const arrayElementElement of arrayElement) {
+//             if(Array.isArray(arrayElementElement)) {
+//                 for (const arrayElementElementElement of arrayElementElement) {
+//                     newArray.push(arrayElementElementElement);
+//                 }
+//             } else{
+//                 newArray.push(arrayElementElement);
+//             }
+//         }
+//     } else{
+//         newArray.push(arrayElement);
+//     }
+//
+// }
+// console.log(newArray);
 
+///////////////////////////////////////////////////////////////////
+//Або кращий спосіб
+// function aaa(arr){
+//     const res = []
+//     for (let item of arr) {
+//         if (typeof item === 'object'){
+//             for (let call of aaa(item)) {
+//                 res.push(call)
+//             }
+//         }else {
+//             res.push(item)
+//         }
+//     }
+//     return res;
+// }
 // ===========додаткове========
