@@ -12,76 +12,106 @@
 //     Якщо ж все ок, то ви маєте прожити свій звичайний день.
 //     Кожна подія має бути з рандомною (не по зростанню) затримкою.
 
-// function myDay () {
+// function myDay (cb) {
 //         console.log('Мій розпорядок дня!');
 //         console.log('День починається...');
 //         setTimeout(() => {
-//             console.log('Просинаюся');
-//             brushTeeth(true);
+//             cb(null, 'Просинаюся');
 //         }, 2000);
-// function breakfast(foods){
+// };
+// function breakfast(foods, cb){
 //         setTimeout(() => {
 //             if (!foods) {
-//                 console.log('Треба сходити в магазин, бо їсти нема чого');
+//                 cb('Треба сходити в магазин, бо їсти нема чого');
 //                 return;
 //             }
-//             console.log('Починаю снідати');
-//             listenLectures();
+//             cb(null, 'Починаю снідати');
 //         }, 3000);
 // };
-// function brushTeeth (brush){
+// function brushTeeth (brush, cb){
 //         setTimeout(() => {
 //             if (!brush) {
-//                 console.log('Закінчилася зубна паста, треба сходити в магазин');
+//                 cb('Закінчилася зубна паста, треба сходити в магазин');
 //                 return;
 //             }
-//             console.log('Чищу зуби');
-//             breakfast(true);
+//             cb(null, 'Чищу зуби');
 //         }, 1500);
 // };
-// function listenLectures(lecture){
+// function listenLectures(cb){
 //         setTimeout(() =>{
-//             console.log('Слухаю лекції з університету');
-//             goForAWalk(false);
+//             cb(null, 'Слухаю лекції з університету');
 //         }, 7000);
 // };
-// function goForAWalk (rain){
+// function goForAWalk (rain, cb){
 //         setTimeout(() => {
 //             if (rain) {
-//                 console.log('Падає дощ, сиджу вдома');
+//                 cb('Падає дощ, сиджу вдома');
 //                 return;
 //             }
-//             console.log('Іду гуляти на вулицю');
-//             watchVideo(true);
+//             cb(null, 'Іду гуляти на вулицю');
 //         }, 3500);
 // };
-// function watchVideo (internet){
+// function watchVideo (internet, cb){
 //         setTimeout(() => {
 //             if (!internet) {
-//                 console.log('Немає інтернету');
+//                 cb('Немає інтернету');
 //                 return;
 //             }
-//             console.log('Дивлюся відео на Youtube');
-//             goToBed();
+//             cb(null, 'Дивлюся відео на Youtube');
 //         }, 4700);
 // };
-// function goToBed(){
+// function goToBed(cb){
 //         setTimeout(() =>{
-//             console.log('Іду лягати спати');
-//             end();
+//             cb(null, 'Іду лягати спати');
 //         }, 6000);
 // };
 //
-// function end() {
+// function end(cb) {
 //     setTimeout(() => {
-//         console.log('Мій розпорядок дня закінчився!');
+//         cb(null, 'Мій розпорядок дня закінчився!');
 //     }, 1000);
 // };
-// };
-// myDay();
-
-
-
+//
+// myDay((err, data) =>{
+//     console.log(data);
+//     brushTeeth(data,(err, data) =>{
+//         if(err){
+//             console.log(err);
+//             return;
+//         }
+//         console.log(data);
+//         breakfast(data,(err, data) =>{
+//             if(err){
+//                 console.log(err);
+//                 return;
+//             }
+//             console.log(data);
+//             listenLectures((err, data) =>{
+//                 console.log(data);
+//                 goForAWalk(err, (err, data) =>{
+//                     if(err){
+//                         console.log(err);
+//                         return;
+//                     }
+//                     console.log(data);
+//                     watchVideo(data, (err, data) =>{
+//                         if(err){
+//                             console.log(err);
+//                             return;
+//                         }
+//                         console.log(data);
+//                         goToBed( (err, data) => {
+//                             console.log(data);
+//                             end( (err, data) => {
+//                                 console.log(data);
+//                             })
+//                         })
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// })
 
 
 
