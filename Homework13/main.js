@@ -226,3 +226,102 @@
 //     .finally(() =>{
 //         console.log('Мій розпорядок дня закінчився!');
 //     })
+
+
+
+
+// function myDay () {
+//     return new Promise((resolve) => {
+//         console.log('Мій розпорядок дня!');
+//         console.log('День починається...');
+//         setTimeout(() => {
+//             resolve('Просинаюся');
+//         }, 2000);
+//     });
+// };
+//
+// function breakfast(foods){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (!foods) {
+//                 reject('Треба сходити в магазин, бо їсти нема чого');
+//             }
+//             resolve('Починаю снідати');
+//         }, 3000);
+//     });
+// };
+// function brushTeeth (brush){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (!brush) {
+//                 reject('Закінчилася зубна паста, треба сходити в магазин');
+//             }
+//             resolve('Чищу зуби');
+//         }, 1500);
+//     });
+// };
+// function listenLectures(lecture){
+//     return new Promise(resolve => {
+//         setTimeout(() =>{
+//             resolve('Слухаю лекції з університету');
+//         }, 7000);
+//     });
+// };
+// function goForAWalk (rain){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (rain) {
+//                 reject('Падає дощ, сиджу вдома');
+//             }
+//             resolve('Іду гуляти на вулицю');
+//         }, 3500);
+//     });
+// };
+// function watchVideo (internet){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (!internet) {
+//                 reject('Немає інтернету');
+//             }
+//             resolve('Дивлюся відео на Youtube');
+//         }, 4700);
+//     });
+// };
+// function goToBed(){
+//     return new Promise(resolve => {
+//         setTimeout(() =>{
+//             resolve('Іду лягати спати');
+//         }, 6000);
+//     });
+// };
+// function end(){
+//     return new Promise(resolve => {
+//         setTimeout(() =>{
+//             resolve('Мій розпорядок дня закінчився!');
+//         }, 1000);
+//     });
+// };
+//
+// async function day(){
+//     try {
+//         const myDayMes = await myDay();
+//         console.log(myDayMes);
+//         const brushTeethMes = await brushTeeth(true);
+//         console.log(brushTeethMes);
+//         const breakfastMes = await breakfast(true);
+//         console.log(breakfastMes);
+//         const listenLecturesMes = await listenLectures();
+//         console.log(listenLecturesMes);
+//         const goForAWalkMes = await goForAWalk(false);
+//         console.log(goForAWalkMes);
+//         const watchVideoMes = await watchVideo(true);
+//         console.log(watchVideoMes);
+//         const goToBedMes = await goToBed();
+//         console.log(goToBedMes);
+//         const endMes = await end();
+//         console.log(endMes);
+//     } catch (err){
+//         console.log(err);
+//     }
+// }
+// day();
